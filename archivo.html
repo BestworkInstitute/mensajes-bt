@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Mensajes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <img src="https://bestwork.cl/wp-content/uploads/2023/05/Logo.png" alt="Logo Bestwork">
+
+        <!-- Login Panel -->
+        <div id="loginPanel" class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Nombre de Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Ingresar</button>
+        </div>
+
+        <!-- Main Panel (hidden initially) -->
+        <div id="mainPanel" class="hidden">
+            <h2>Subir Documento de Excel</h2>
+            <input type="file" id="uploadExcel">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                        <th>Ejecutiva</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="enviarMensajesBtn" disabled>Enviar Mensajes</button>
+
+            <!-- Console Output -->
+            <div id="consoleOutput"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
